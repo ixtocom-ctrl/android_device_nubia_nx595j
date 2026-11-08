@@ -41,10 +41,7 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libnubia_effect.so'
     ): blob_fixup()
         .remove_needed('libgui.so'),
-    (
-     'vendor/lib/libNubiaImageAlgorithm.so',
-     'vendor/lib64/libNubiaImageAlgorithm.so'
-    ): blob_fixup()
+    'vendor/lib/libNubiaImageAlgorithm.so': blob_fixup()
         .remove_needed('libjnigraphics.so')
         .remove_needed('libnativehelper.so')
         .add_needed('libui_shim.so')
@@ -53,8 +50,6 @@ blob_fixups: blob_fixups_user_type = {
         .remove_needed('libandroid.so'),
     'vendor/lib64/libArcsoftAlgorithm.so': blob_fixup()
         .remove_needed('libjnigraphics.so'),
-    'vendor/lib64/com.fingerprints.extension@1.0.so': blob_fixup()
-        .add_needed('libhidlbase_shim.so'),
     (
      'vendor/lib/libAltek_AF.so',
      'vendor/lib/libHAFIAFalSDE1.so',
@@ -71,7 +66,6 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib/libarcsoft_beautyshot_image_algorithm.so',
      'vendor/lib/libarcsoft_beautyshot_video_algorithm.so',
      'vendor/lib/libarcsoft_dualcam_refocus.so',
-     'vendor/lib/libarcsoft_low_light_shot.so',
      'vendor/lib/libarcsoft_night_shot.so',
      'vendor/lib/libarcsoft_picauto.so',
      'vendor/lib64/libalParseOTP.so',
@@ -83,7 +77,6 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libarcsoft_beautyshot_image_algorithm.so',
      'vendor/lib64/libarcsoft_beautyshot_video_algorithm.so',
      'vendor/lib64/libarcsoft_dualcam_refocus.so',
-     'vendor/lib64/libarcsoft_low_light_shot.so',
      'vendor/lib64/libarcsoft_night_shot.so',
     ): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
@@ -98,10 +91,6 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('liblog.so'),
     'vendor/lib/libmmcamera_ppeiscore.so': blob_fixup()
         .add_needed('libGLESv2_adreno.so'),
-    'vendor/bin/qfp-daemon': blob_fixup()
-        .replace_needed('libhidltransport.so', 'libhidlbase.so'),
-    'vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so': blob_fixup()
-        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
     'vendor/lib64/hw/nfc_nci.msm8998.so': blob_fixup()
         .binary_regex_replace(b'nfc_nci.bcm2079x', b'nfc_nci\x00bcm2079x'),
 }  # fmt: skip
