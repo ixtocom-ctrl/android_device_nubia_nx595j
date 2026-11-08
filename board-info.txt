@@ -1,0 +1,2 @@
+require version-modem=2018-10-18 12:17:52
+require version-firmware=1.12

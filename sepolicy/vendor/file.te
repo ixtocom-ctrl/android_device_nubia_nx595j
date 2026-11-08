@@ -1,0 +1,8 @@
+# Fingerprint (Goodix)
+type fpdsensor_data_file, file_type, data_file_type;
+
+# Light Sensor
+type sysfs_light_sensor, sysfs_type, fs_type;
+
+# Proximity Sensor
+type sysfs_proximity_sensor, sysfs_type, fs_type;

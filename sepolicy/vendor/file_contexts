@@ -1,0 +1,25 @@
+# Fingerprint (Goodix)
+/dev/goodix_fp                                                                                                  u:object_r:fingerprint_device:s0
+/data/vendor/goodix(/.*)?                                                                                       u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/gf_data(/.*)?                                                                                      u:object_r:fingerprint_vendor_data_file:s0
+/data/fpdsensor(/.*)?                                                                                           u:object_r:fpdsensor_data_file:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.nx595j               u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/init\.nubia\.goodix\.sh                                                            u:object_r:vendor_qti_init_shell_exec:s0
+
+# Light HAL
+/sys/class/leds(/.*)?                                                                                           u:object_r:sysfs_leds:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pmi8998@3:qcom,leds@d000/modalias    u:object_r:sysfs_leds:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.nx595j                                         u:object_r:hal_light_default_exec:s0
+
+# Light sensor
+/sys/devices/virtual/light/light(/.*)?                                                                          u:object_r:sysfs_light_sensor:s0
+
+# NFC
+/dev/bcm2079x                                                                                                   u:object_r:nfc_device:s0
+
+# Proximity
+/sys/devices/virtual/proximity/proximity(/.*)?                                                                  u:object_r:sysfs_proximity_sensor:s0
+
+# Vibrator
+/vendor/bin/hw/android\.hardware\.vibrator-service\.nubia                                                       u:object_r:hal_vibrator_default_exec:s0
+/sys/devices/virtual/timed_output/vibrator(/.*)?                                                                u:object_r:sysfs_vibrator:s0
