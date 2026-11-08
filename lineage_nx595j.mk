@@ -21,6 +21,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from nx595j device
 $(call inherit-product, device/nubia/nx595j/device.mk)
 
+# Google apps (MindTheGapps), only when vendor/gapps is synced
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
